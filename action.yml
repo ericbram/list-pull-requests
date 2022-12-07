@@ -37,7 +37,7 @@ runs:
         for repo in repolist.splitlines():
             if (len(repo) != 0):
               # Get the PR list of the repo
-              p = subprocess.Popen(f"gh pr list -R {repo} --json title,createdAt,url", stdout=subprocess.PIPE, shell=True)
+              p = subprocess.Popen(f"gh pr list -R {repo} --json title,createdAt,url,isDraft", stdout=subprocess.PIPE, shell=True)
               results = p.communicate()[0].decode('utf-8')
               prList = json.loads(results)
 
