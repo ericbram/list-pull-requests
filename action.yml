@@ -53,7 +53,7 @@ runs:
 
               output.append(jsonData)
         text_file = open("output.json", "w")
-        text_file.write(json.dumps(output).replace("'", r"\'"))
+        text_file.write(json.dumps(output).replace("'", r""))
         text_file.close()
 
     - name: Set Output
